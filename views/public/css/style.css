@@ -278,6 +278,11 @@
   margin-bottom: 3.2rem;
 }
 
+.course-info {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
 .course-attributes {
   list-style: none;
   display: flex;
@@ -302,7 +307,7 @@
   width: 100%;
 }
 
-.all-recipes {
+.all-courses {
   text-align: center;
   font-size: 1.8rem;
 }
@@ -565,20 +570,37 @@
 /**************************/
 /* CONTACT US */
 /**************************/
+
+.section-contact {
+  background-color: #fae5d3;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.contact-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.enquiry {
+  padding: 9.6rem 0;
+}
+
 .card-body {
-  background-color: #e67e22;
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(to right bottom, #fae5d3, #eb984e);
+  /* background-color: #e67e22; */
   border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  /* background-image: linear-gradient(to right bottom, #fae5d3, #eb984e); */
+
   padding: 1.5rem;
 }
 
 .form-group {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
-  background-color: #e67e22;
+  /* background-color: #e67e22; */
   border-radius: 11px;
-  background-image: linear-gradient(to right bottom, #fdf2e9, #eb984e);
+  /* background-image: linear-gradient(to right bottom, #fdf2e9, #eb984e); */
   overflow: hidden;
   margin-bottom: 2rem;
   text-align: left;

@@ -4,73 +4,33 @@
   background-color: #43aa8b;
 }
 
-.economy {
-  color: white;
-  background-color: #43aa8b;
-}
-.first-class {
-  color: white;
-  background-color: #277da1;
-}
-.reduced {
-  color: white;
-  background-color: #f8961e;
-}
-
-.section-seatchart {
-  padding: 9.6rem 0;
-}
-
 .sc-main-container {
   display: flex;
-  justify-content: center;
-  font-family: "Rubik", sans-serif;
-  font-size: 14px;
-  align-items: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 25px;
+  align-items: flex-start;
 }
 
 .sc-right-container {
-  padding: 7.6rem 0;
-  display: flex;
-  justify-content: center;
-  font-family: "Rubik", sans-serif;
-  font-size: 14px;
-  align-items: normal;
+  margin-left: 75px;
 }
 
-.grid {
-  display: grid;
-  column-gap: 6.4rem;
-  row-gap: 9.6rem rem;
-  margin-bottom: 9.6rem;
-}
-
-.grid--center-v {
-  align-items: center;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/**************************/
 /* Seat map css */
-/**************************/
+
 .sc-map {
   display: flex;
-
   align-items: flex-end;
 }
 
 .sc-map-inner-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .sc-seats-container {
   display: flex;
   flex-direction: column;
-  padding: 15px;
 }
 
 .sc-seat-row {
@@ -81,8 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  width: 52px;
+  height: 42px;
+  width: 42px;
   margin: 4px;
   box-sizing: border-box;
   border-top-left-radius: 10px;
@@ -99,8 +59,8 @@
 .sc-front {
   display: flex;
   justify-content: center;
-  color: #6f6f6f;
-  border-radius: 9px;
+  color: #b0b0b0;
+  border-radius: 3px;
   height: 30px;
   line-height: 30px;
   text-align: center;
@@ -154,13 +114,12 @@
   background-color: transparent;
 }
 
-/**************************/
 /* Seat legend css */
-/**************************/
 
 .sc-legend {
   list-style-type: none;
-  margin: 0 -4rem 0 3rem;
+  margin: 0;
+  padding: 0;
 }
 
 .sc-legend-item {
@@ -179,34 +138,12 @@
   height: 22px;
   border-radius: 5px 5px 0 0;
 }
-/**************************/
-/* Booking text box */
-/**************************/
 
-.workspace-number {
-  font-size: 8.6rem;
-  font-weight: 600;
-  color: #ddd;
-  margin-bottom: 1.2rem;
-}
-
-.workspace-description {
-  font-size: 1.8rem;
-  line-height: 1.8;
-}
-
-/**************************/
 /* Cart css */
-/**************************/
-
-.sc-carts-container {
-  display: flex;
-  flex-direction: row;
-  padding: 0px 15px;
-}
 
 .sc-cart {
-  width: 350px;
+  width: 300px;
+  margin-bottom: 50px;
 }
 
 .sc-cart-table-container {
@@ -305,9 +242,7 @@
   background-color: #cc2331;
 }
 
-/**************************/
 /* Ticket css */
-/**************************/
 
 .sc-ticket {
   display: flex;

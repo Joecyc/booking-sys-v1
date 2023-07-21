@@ -1,0 +1,275 @@
+<!-- saved from url=(0034)https://seatchart.js.org/demo.html -->
+<html lang="en">
+  <script
+    async="false"
+    type="text/javascript"
+    src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"
+  ></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Demo</title>
+
+    <link rel="stylesheet" href="css/seatchart.css" />
+    <style>
+      body { display: flex; justify-content: center; } .economy { color: white;
+      background-color: #43aa8b; } .first-class { color: white;
+      background-color: #277da1; } .reduced { color: white; background-color:
+      #f8961e; }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="sc-main-container">
+      <div class="sc-map">
+        <div class="sc-indexer sc-indexer-rows">
+          <div class="sc-seat-indexer">A</div>
+          <div class="sc-seat-indexer">B</div>
+          <div class="sc-seat-indexer">C</div>
+          <div class="sc-spacer"></div>
+          <div class="sc-seat-indexer">D</div>
+          <div class="sc-seat-indexer">E</div>
+          <div class="sc-seat-indexer">F</div>
+          <div class="sc-seat-indexer">G</div>
+          <div class="sc-spacer"></div>
+          <div class="sc-seat-indexer">H</div>
+          <div class="sc-seat-indexer">I</div>
+          <div class="sc-seat-indexer">J</div>
+        </div>
+        <div class="sc-map-inner-container">
+          <div class="sc-front">Front</div>
+          <div class="sc-indexer sc-indexer-columns">
+            <div class="sc-seat-indexer">1</div>
+            <div class="sc-seat-indexer">2</div>
+            <div class="sc-seat-indexer">3</div>
+            <div class="sc-seat-indexer">4</div>
+            <div class="sc-seat-indexer">5</div>
+            <div class="sc-spacer"></div>
+            <div class="sc-seat-indexer">6</div>
+            <div class="sc-seat-indexer">7</div>
+            <div class="sc-seat-indexer">8</div>
+            <div class="sc-seat-indexer">9</div>
+            <div class="sc-seat-indexer">10</div>
+          </div>
+          <div class="sc-seats-container">
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-disabled first-class">A1</div>
+              <div class="sc-seat sc-seat-available first-class">A2</div>
+              <div class="sc-seat sc-seat-available first-class">A3</div>
+              <div class="sc-seat sc-seat-reserved first-class">A4</div>
+              <div class="sc-seat sc-seat-reserved first-class">A5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-selected first-class">A6</div>
+              <div class="sc-seat sc-seat-selected first-class">A7</div>
+              <div class="sc-seat sc-seat-available first-class">A8</div>
+              <div class="sc-seat sc-seat-available first-class">A9</div>
+              <div class="sc-seat sc-seat-disabled first-class">A10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available first-class">B1</div>
+              <div class="sc-seat sc-seat-available first-class">B2</div>
+              <div class="sc-seat sc-seat-available first-class">B3</div>
+              <div class="sc-seat sc-seat-available first-class">B4</div>
+              <div class="sc-seat sc-seat-available first-class">B5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available first-class">B6</div>
+              <div class="sc-seat sc-seat-available first-class">B7</div>
+              <div class="sc-seat sc-seat-available first-class">B8</div>
+              <div class="sc-seat sc-seat-available first-class">B9</div>
+              <div class="sc-seat sc-seat-available first-class">B10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available first-class">C1</div>
+              <div class="sc-seat sc-seat-available first-class">C2</div>
+              <div class="sc-seat sc-seat-available first-class">C3</div>
+              <div class="sc-seat sc-seat-available first-class">C4</div>
+              <div class="sc-seat sc-seat-available first-class">C5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available first-class">C6</div>
+              <div class="sc-seat sc-seat-available first-class">C7</div>
+              <div class="sc-seat sc-seat-available first-class">C8</div>
+              <div class="sc-seat sc-seat-available first-class">C9</div>
+              <div class="sc-seat sc-seat-available first-class">C10</div>
+            </div>
+            <div class="sc-spacer"></div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available economy">D1</div>
+              <div class="sc-seat sc-seat-available economy">D2</div>
+              <div class="sc-seat sc-seat-available economy">D3</div>
+              <div class="sc-seat sc-seat-available economy">D4</div>
+              <div class="sc-seat sc-seat-available economy">D5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available economy">D6</div>
+              <div class="sc-seat sc-seat-available economy">D7</div>
+              <div class="sc-seat sc-seat-available economy">D8</div>
+              <div class="sc-seat sc-seat-available economy">D9</div>
+              <div class="sc-seat sc-seat-available economy">D10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available economy">E1</div>
+              <div class="sc-seat sc-seat-available economy">E2</div>
+              <div class="sc-seat sc-seat-available economy">E3</div>
+              <div class="sc-seat sc-seat-available economy">E4</div>
+              <div class="sc-seat sc-seat-available economy">E5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available economy">E6</div>
+              <div class="sc-seat sc-seat-available economy">E7</div>
+              <div class="sc-seat sc-seat-available economy">E8</div>
+              <div class="sc-seat sc-seat-available economy">E9</div>
+              <div class="sc-seat sc-seat-available economy">E10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available economy">F1</div>
+              <div class="sc-seat sc-seat-available economy">F2</div>
+              <div class="sc-seat sc-seat-available economy">F3</div>
+              <div class="sc-seat sc-seat-available economy">F4</div>
+              <div class="sc-seat sc-seat-available economy">F5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available economy">F6</div>
+              <div class="sc-seat sc-seat-available economy">F7</div>
+              <div class="sc-seat sc-seat-available economy">F8</div>
+              <div class="sc-seat sc-seat-available economy">F9</div>
+              <div class="sc-seat sc-seat-available economy">F10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available economy">G1</div>
+              <div class="sc-seat sc-seat-available economy">G2</div>
+              <div class="sc-seat sc-seat-available economy">G3</div>
+              <div class="sc-seat sc-seat-available economy">G4</div>
+              <div class="sc-seat sc-seat-available economy">G5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available economy">G6</div>
+              <div class="sc-seat sc-seat-available economy">G7</div>
+              <div class="sc-seat sc-seat-available economy">G8</div>
+              <div class="sc-seat sc-seat-available economy">G9</div>
+              <div class="sc-seat sc-seat-available economy">G10</div>
+            </div>
+            <div class="sc-spacer"></div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available reduced">H1</div>
+              <div class="sc-seat sc-seat-available reduced">H2</div>
+              <div class="sc-seat sc-seat-available reduced">H3</div>
+              <div class="sc-seat sc-seat-available reduced">H4</div>
+              <div class="sc-seat sc-seat-available reduced">H5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available reduced">H6</div>
+              <div class="sc-seat sc-seat-available reduced">H7</div>
+              <div class="sc-seat sc-seat-available reduced">H8</div>
+              <div class="sc-seat sc-seat-available reduced">H9</div>
+              <div class="sc-seat sc-seat-available reduced">H10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available reduced">I1</div>
+              <div class="sc-seat sc-seat-available reduced">I2</div>
+              <div class="sc-seat sc-seat-available reduced">I3</div>
+              <div class="sc-seat sc-seat-available reduced">I4</div>
+              <div class="sc-seat sc-seat-available reduced">I5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available reduced">I6</div>
+              <div class="sc-seat sc-seat-available reduced">I7</div>
+              <div class="sc-seat sc-seat-available reduced">I8</div>
+              <div class="sc-seat sc-seat-available reduced">I9</div>
+              <div class="sc-seat sc-seat-available reduced">I10</div>
+            </div>
+            <div class="sc-seat-row">
+              <div class="sc-seat sc-seat-available reduced">J1</div>
+              <div class="sc-seat sc-seat-available reduced">J2</div>
+              <div class="sc-seat sc-seat-available reduced">J3</div>
+              <div class="sc-seat sc-seat-available reduced">J4</div>
+              <div class="sc-seat sc-seat-available reduced">J5</div>
+              <div class="sc-spacer"></div>
+              <div class="sc-seat sc-seat-available reduced">J6</div>
+              <div class="sc-seat sc-seat-available reduced">J7</div>
+              <div class="sc-seat sc-seat-available reduced">J8</div>
+              <div class="sc-seat sc-seat-available reduced">J9</div>
+              <div class="sc-seat sc-seat-available reduced">J10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sc-right-container">
+        <div class="sc-cart">
+          <div class="sc-cart-header">
+            <p class="sc-cart-title">Cart (2)</p>
+            <button class="sc-cart-btn sc-cart-btn-delete" type="button">
+              <div class="sc-cart-btn-icon"></div>
+            </button>
+          </div>
+          <div class="sc-cart-table-container">
+            <table class="sc-cart-table">
+              <tr>
+                <td>
+                  <div class="sc-ticket first-class">
+                    <div class="sc-ticket-stripes"></div>
+                    <div class="sc-ticket-seat-label">A6</div>
+                    <div class="sc-ticket-seat-type">First Class</div>
+                    <div class="sc-ticket-stripes"></div>
+                  </div>
+                </td>
+                <td>€25.00</td>
+                <td>
+                  <button class="sc-cart-btn sc-cart-btn-delete" type="button">
+                    <div class="sc-cart-btn-icon"></div>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="sc-ticket first-class">
+                    <div class="sc-ticket-stripes"></div>
+                    <div class="sc-ticket-seat-label">A7</div>
+                    <div class="sc-ticket-seat-type">First Class</div>
+                    <div class="sc-ticket-stripes"></div>
+                  </div>
+                </td>
+                <td>€25.00</td>
+                <td>
+                  <button class="sc-cart-btn sc-cart-btn-delete" type="button">
+                    <div class="sc-cart-btn-icon"></div>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="sc-cart-footer">
+            <p class="sc-cart-total">Total: €50.00</p>
+            <button class="sc-cart-btn sc-cart-btn-submit" type="button">
+              Checkout
+            </button>
+          </div>
+        </div>
+        <ul class="sc-legend">
+          <li class="sc-legend-item">
+            <div class="sc-legend-bullet first-class"></div>
+            <p class="sc-legend-description">First Class (€25)</p>
+          </li>
+          <li class="sc-legend-item">
+            <div class="sc-legend-bullet economy"></div>
+            <p class="sc-legend-description">Economy (€15)</p>
+          </li>
+          <li class="sc-legend-item">
+            <div class="sc-legend-bullet reduced"></div>
+            <p class="sc-legend-description">Reduced (€10)</p>
+          </li>
+          <li class="sc-legend-item">
+            <div class="sc-legend-bullet sc-seat-reserved"></div>
+            <p class="sc-legend-description">Reserved</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="seatchart.min.js"></script>
+    <script>
+      var options = { map: { rows: 10, columns: 10, seatTypes: { default: {
+      label: "Economy", cssClass: "economy", price: 15, }, first: { label:
+      "First Class", cssClass: "first-class", price: 25, seatRows: [0, 1, 2], },
+      reduced: { label: "Reduced", cssClass: "reduced", price: 10, seatRows: [7,
+      8, 9], }, }, disabledSeats: [ { row: 0, col: 0 }, { row: 0, col: 9 }, ],
+      reservedSeats: [ { row: 0, col: 3 }, { row: 0, col: 4 }, ], selectedSeats:
+      [ { row: 0, col: 5 }, { row: 0, col: 6 }, ], rowSpacers: [3, 7],
+      columnSpacers: [5], }, }; var element =
+      document.getElementById("container"); var sc = new Seatchart(element,
+      options); sc.addEventListener("submit", function handleSubmit(e) {
+      alert("Total: " + e.total + "€"); });
+    </script>
+  </body>
+</html>

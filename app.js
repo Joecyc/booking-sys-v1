@@ -46,7 +46,7 @@ app.use(
     secret: "anything", //? hash func. (e.g. generate random id by func.)
     resave: true,
     saveUninitialized: true, //? auth user's tokens
-    //cookie : { maxAge : 15 * 10000 }, //? set time duration e.g auto-logout 150 * 1000
+    cookie: { maxAge: 1500 * 10000 }, //? set time duration e.g auto-logout 150 * 1000
     //genid: function ()
   })
 );
@@ -96,12 +96,17 @@ app.get("/calendar", (req, res) => {
 app.get("/seatchart", (req, res) => {
   res.render("Seatchart"); //seating plan sandbox
 });
+//! testing
+app.get("/front", (req, res) => {
+  res.render("front"); //front-end sandbox
+});
 //! middleware
-app.use("/ideas", ensureAuthenticated, ideasRoute); //? main route
-app.use("/users", usersRoute); //? main route
+app.use("/ideas", ensureAuthenticated, ideasRoute);
+app.use("/users", usersRoute);
 app.use("/bookings", ensureAuthenticated, bookingsRoute);
 app.use("/contacts", contactsRoute);
 app.use("/admin", adminRoute);
+
 app.use(function (req, res, next) {
   console.log("Time", Date.now());
   next();

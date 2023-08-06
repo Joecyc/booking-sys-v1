@@ -1,18 +1,13 @@
 /* App.css */
-.economy {
-  color: white;
-  background-color: #43aa8b;
-}
-
-.economy {
-  color: white;
-  background-color: #43aa8b;
-}
-.first-class {
+.room1 {
   color: white;
   background-color: #277da1;
 }
-.reduced {
+.room2 {
+  color: white;
+  background-color: #43aa8b;
+}
+.room3 {
   color: white;
   background-color: #f8961e;
 }
@@ -30,7 +25,7 @@
 }
 
 .sc-right-container {
-  padding: 7.6rem 0;
+  padding: 9.6rem 0;
   display: flex;
   justify-content: center;
   font-family: "Rubik", sans-serif;
@@ -46,11 +41,34 @@
 }
 
 .grid--center-v {
-  align-items: center;
+  align-items: start;
 }
 
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
+}
+
+/**************************/
+/* today date */
+/**************************/
+
+.today-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.today-icon {
+  height: 4.4rem;
+  width: 4.4rem;
+  color: #ddd;
+}
+
+.today-date {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  /* font-weight: 600; */
+  color: #ddd;
 }
 
 /**************************/
@@ -155,12 +173,101 @@
 }
 
 /**************************/
+/* Booking step text box */
+/**************************/
+
+.step-text-box {
+  align-items: center;
+  justify-content: center;
+}
+
+.step-description {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* .list-date-time {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list-date {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.list-time {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.date-time-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: #000;
+} */
+
+/**************************/
+/* course input form css */
+/**************************/
+/* .course-card-body {
+  border: none;
+  padding: 0rem 0rem;
+} */
+
+.course-id-form {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  border-radius: 11px;
+  overflow: hidden;
+  text-align: left;
+  padding: 1.8rem 0rem 1.8rem 1.8rem;
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.course-id-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.course-id-form input,
+.course-id-form select {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 9px;
+  background-color: #fdf2e9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.course-id-form input::placeholder {
+  color: #aaa;
+}
+
+.course-id-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/**************************/
 /* Seat legend css */
 /**************************/
 
 .sc-legend {
   list-style-type: none;
-  margin: 0 -4rem 0 3rem;
+  margin: 17rem 0rem 0rem 5rem;
 }
 
 .sc-legend-item {
@@ -179,21 +286,6 @@
   height: 22px;
   border-radius: 5px 5px 0 0;
 }
-/**************************/
-/* Booking text box */
-/**************************/
-
-.workspace-number {
-  font-size: 8.6rem;
-  font-weight: 600;
-  color: #ddd;
-  margin-bottom: 1.2rem;
-}
-
-.workspace-description {
-  font-size: 1.8rem;
-  line-height: 1.8;
-}
 
 /**************************/
 /* Cart css */
@@ -202,7 +294,7 @@
 .sc-carts-container {
   display: flex;
   flex-direction: row;
-  padding: 0px 15px;
+  padding: 0px 0px;
 }
 
 .sc-cart {
@@ -344,4 +436,15 @@
     transparent 3px,
     transparent 6px
   );
+}
+/** for time-chart function **/
+.hide {
+  display: none;
+}
+
+.select-disabled {
+  color: white;
+  background-color: #d2d2d2;
+  text-decoration: line-through;
+  pointer-events: none;
 }

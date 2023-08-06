@@ -29,6 +29,10 @@ const BookingSchema = new Schema ({
         required: false,
 
     },
+    courseID : {
+        type : String,
+        required: false,
+    },
 
 });
 

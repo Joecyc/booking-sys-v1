@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/** reset part **/
+/** Reset part **/
 /* body {
   display: flex;
   align-items: center;
@@ -24,8 +24,7 @@
 }
 
 .wrapper {
-  width: 450px;
-
+  width: 100%;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -61,7 +60,7 @@ header .current-date {
   font-size: 1.45rem;
   font-weight: 500;
 }
-/*** right calendar ***/
+/*** test-right calendar ***/
 header .icons-test span {
   height: 38px;
   width: 38px;
@@ -84,6 +83,16 @@ header .current-date-test {
   font-size: 1.45rem;
   font-weight: 500;
 }
+button {
+  border: none;
+  background-color: none;
+}
+form {
+  border: none;
+  background-color: none;
+}
+/*** test-right calendar ***/
+
 .calendar {
   padding: 20px;
 }
@@ -111,17 +120,27 @@ header .current-date-test {
   position: relative;
   margin-top: 30px;
 }
-/*** right calendar ***/
+
+/*** test-right calendar ***/
 .calendar .days-test li {
   z-index: 1;
   cursor: pointer;
   position: relative;
   margin-top: 30px;
 }
-.days li.test {
+.days li {
   color: #aaa;
 }
+
 .days li.inactive {
+  color: #aaa;
+}
+/*** test-calendar-right ***/
+.days a.inactive {
+  color: #aaa;
+}
+/*** test-calendar-right ***/
+.days-test li.inactive {
   color: #aaa;
 }
 .days li.active {
@@ -138,9 +157,14 @@ header .current-date-test {
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
 .days li.active::before {
   background: #9b59b6;
 }
 .days li:not(.active):hover::before {
+  background: #f2f2f2;
+}
+/*** test-calendar-right ***/
+.days-test li:not(.active):hover::before {
   background: #f2f2f2;
 }

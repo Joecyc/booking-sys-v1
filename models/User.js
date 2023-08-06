@@ -22,6 +22,18 @@ const UserSchema = new Schema ({
         type : Boolean,
         required : false,
     },
+    role : {
+        type : String,
+        required : false,
+    },
+    priority : {
+        type : String,
+        required : false,
+    },
+    conf_seq_num : {
+        type : Number,
+        required : false,
+    },
 });
 
 const User = mongoose.model("users", UserSchema);

@@ -58,9 +58,8 @@ const renderCalendar = () => {
   for (let i = 1; i <= lastDateofMonth; i++) {
     // creating li of all days of current month
     // adding active class to li if the current day, month, and year matched
-    //export current Date
+    // export current Date
     let currentDate = currYear + "/" + (currMonth + 1) + "/" + i;
-    // console.log(currentDate);
 
     let isToday =
       i === date.getDate() &&
@@ -71,19 +70,17 @@ const renderCalendar = () => {
     // liTag += `<li class="${isToday}" value="">${i}</li>`;
     liTag += `
     <li class="${isToday}">
-    <form action="/bookings/add" method="post">
+    <form action="/bookings/add" method="POST">
     <input
-    id="bookingDate"
-    class="postDate"
-    name="bookingDate"
     type="hidden"
+    name="bookingDate"
+    class=""
     value="${currentDate}"
     >
     <button
-    class="search"
-    value="checkSessions"
-    name="action"
     type="submit"
+    name="action"
+    class=""
     >${i}</button>
     </form>
     </li>
@@ -137,7 +134,7 @@ const renderCalendarRight = () => {
   for (let i = 1; i <= lastDateofMonth; i++) {
     // creating li of all days of current month
     // adding active class to li if the current day, month, and year matched
-    //export current Date
+    // export current Date
     let currentDate = currYear + "/" + (currMonth + 1) + "/" + i;
     postDate.push(currentDate);
 
@@ -167,7 +164,6 @@ const renderCalendarRight = () => {
     </li>
     `;
   }
-  console.log(postDate[0]);
 
   for (let i = lastDayofMonth; i < 6; i++) {
     // creating li of next month first days

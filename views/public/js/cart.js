@@ -25,99 +25,128 @@ const times = [
   { time: "21:30", int: 21.5 },
 ];
 
+//* Reserved Room CSS <-> backend *//
+// $(".se-seat").addEventListener("load", function () {});
+
 /* add cart -> selected items */
 $(function () {
   let bookDiv = "";
   $(".sc-seat").on("click", function () {
-    const roomType = $(this).toggleClass("select-disabled");
-    const room1 = "Room A";
-    const room2 = "Room B1";
-    const room3 = "Room B2";
-    let selectedSession1 = [];
-    let selectedSession2 = [];
-    let selectedSession3 = [];
+    const disabled = $(this).toggleClass("select-disabled");
+    let selectedSession1 = [],
+      selectedSession2 = [],
+      selectedSession3 = [];
+    let session = $(this).data("sec");
+    let selected = "";
+    let roomType = "";
+    let roomIs = "";
 
     if ($(this).hasClass("room1")) {
-      $(".room1").on("click", function () {});
-      const session = $(this).data("sec");
-      const selected = `
+      roomType = "room1";
+      roomIs = "A";
+      selected = `
       <tr class="items">
       <td>
-      <div class="sc-ticket room1">
-      <div class="sc-ticket-stripes"></div>
-      <div class="sc-ticket-seat-label">${session}</div>
-      <div class="sc-ticket-seat-type">${room1}</div>
-      <div class="sc-ticket-stripes"></div></td>
-      <td></td>
-      </div>
-      <td>
+        <div class="sc-ticket ${roomType}">
+          <div class="sc-ticket-stripes"></div>
+          <div class="sc-ticket-seat-label">
+            <input
+              type="hidden"
+              name="session"
+              value="${session}"
+            />${session}
+          </div>
+          <div class="sc-ticket-seat-type">
+          <input
+          type="hidden"
+          name="facilities"
+          value="${roomIs}"
+        />${roomIs}</div>
+          <div class="sc-ticket-stripes"></div>
+        </div>
       </td>
-      </tr>  
+      <td></td>
+      <td></td>
+      </tr>
       `;
       $(".cart-items").append(selected);
-
-      bookDiv = selected;
-      selectedSession1.push(session);
-      console.log(session);
-      console.log(selectedSession1);
     } else if ($(this).hasClass("room2")) {
-      $(".room2").on("click", function () {});
-      const session = $(this).data("sec");
-      const selected = `
+      roomType = "room2";
+      roomIs = "B1";
+      selected = `
       <tr class="items">
       <td>
-      <div class="sc-ticket room2">
-      <div class="sc-ticket-stripes"></div>
-      <div class="sc-ticket-seat-label">${session}</div>
-      <div class="sc-ticket-seat-type">${room2}</div>
-      <div class="sc-ticket-stripes"></div></td>
-      <td></td>
-      </div>
-      <td>
+        <div class="sc-ticket ${roomType}">
+          <div class="sc-ticket-stripes"></div>
+          <div class="sc-ticket-seat-label">
+            <input
+              type="hidden"
+              name="session"
+              value="${session}"
+            />${session}
+          </div>
+          <div class="sc-ticket-seat-type">
+          <input
+          type="hidden"
+          name="facilities"
+          value="${roomIs}"
+        />${roomIs}</div>
+          <div class="sc-ticket-stripes"></div>
+        </div>
       </td>
-      </tr>  
+      <td></td>
+      <td></td>
+      </tr> 
       `;
       $(".cart-items").append(selected);
-
-      bookDiv = selected;
-      selectedSession2.push(session);
-      console.log(session);
-      console.log(selectedSession2);
     } else {
-      $(".room3").on("click", function () {});
-      const session = $(this).data("sec");
-      const selected = `
+      roomType = "room3";
+      roomIs = "B2";
+      selected = `
       <tr class="items">
       <td>
-      <div class="sc-ticket room3">
-      <div class="sc-ticket-stripes"></div>
-      <div class="sc-ticket-seat-label">${session}</div>
-      <div class="sc-ticket-seat-type">${room3}</div>
-      <div class="sc-ticket-stripes"></div></td>
-      <td></td>
-      </div>
-      <td>
+        <div class="sc-ticket ${roomType}">
+          <div class="sc-ticket-stripes"></div>
+          <div class="sc-ticket-seat-label">
+            <input
+              type="hidden"
+              name="session"
+              value="${session}"
+            />${session}
+          </div>
+          <div class="sc-ticket-seat-type">
+          <input
+          type="hidden"
+          name="facilities"
+          value="${roomIs}"
+        />${roomIs}</div>
+          <div class="sc-ticket-stripes"></div>
+        </div>
       </td>
-      </tr>  
+      <td></td>
+      <td></td>
+      </tr>
       `;
       $(".cart-items").append(selected);
-
-      /* button = 
-    <button class="sc-cart-btn sc-cart-btn-delete" type="button">
-    <div class="sc-cart-btn-icon"></div>
-    </button>*/
-      bookDiv = selected;
-      console.log(bookDiv);
-      selectedSession3.push(session);
-      console.log(session);
-      console.log(selectedSession3);
     }
+    //** further use **//
+    // selectedSession1.push(session);
+    // selectedSession2.push(session);
+    // selectedSession3.push(session);
+    console.log(session);
+
     /* delete items */
     // $(".items").click(function () {
+    //   // $(".cart-items").children().remove();
     //   $(".sc-seat").removeClass("select-disabled");
     // });
 
-    /* Selected Room CSS */
+    // html
+    // <button class="sc-cart-btn sc-cart-btn-delete" type="button">
+    //   <div class="sc-cart-btn-icon"></div>
+    //   </button>
+
+    //* Reserved Room CSS */
     // const seatSelected = document.querySelectorAll(".addRoom");
     // seatSelected.forEach((addRoom) => {
     //   addRoom.addEventListener("click", function () {
@@ -125,33 +154,35 @@ $(function () {
     //   });
     // });
 
+    /* empty cart */
+    const clearItems = () => {
+      $(".emptyCart").click(function () {
+        $(".cart-items").children().remove();
+        $(".book-confirm").children().remove();
+        $(".sc-seat").removeClass("select-disabled");
+        $("#reserve").removeClass("select-disabled");
+        location.reload();
+        return false;
+      });
+    };
+    clearItems();
     /* render booked times with time-range */
+    //* after reload select-disabled != work
     const checkString = () => {
       $("#reserve").on("click", function () {
         $(this).toggleClass("select-disabled");
-
         $(".cart-items").children().remove();
-
         const refreshButton = document.querySelector(".res");
+
         const refreshPage = () => {
           location.reload();
         };
         refreshButton.addEventListener("click", refreshPage);
 
-        // console.log(selectedSession1);
-        // console.log(selectedSession2);
-
-        const elements = `
-        <div class="sc-ticket room1">
-        <div class="sc-ticket-stripes"></div>
-        <div class="sc-ticket-seat-label">${num}</div>
-        <div class="sc-ticket-seat-type"></div>
-        <div class="sc-ticket-stripes"></div></td>
-        `;
+        const elements = selected;
         $(".book-confirm").append(elements);
-        // $(".book-confirm").innerText = "`${num}`";
       });
-
+      // date format => integer => num
       const session = $(this).data("sec");
       let num = [];
       for (i = 0; i < times.length; i++) {
@@ -163,21 +194,7 @@ $(function () {
       }
     };
     checkString();
-
-    const clearItems = () => {
-      /* empty cart */
-      $(".emptyCart").click(function () {
-        $(".cart-items").children().remove();
-        $(".book-confirm").children().remove();
-        $(".sc-seat").removeClass("select-disabled");
-        $("#reserve").removeClass("select-disabled");
-        return false;
-      });
-    };
-    clearItems();
   });
 });
 
 //** next step develop => time calculate **//
-
-//* Reserved Room CSS <-> backend *//

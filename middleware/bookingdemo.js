@@ -1,58 +1,35 @@
-import Booking from "../models/Booking.js";
-import User from "../models/User.js";
-
-export const getBookings = (req, res) => {
+//* middleware *//
+const getBookings = (req, res) => {
   Booking.find({ userID: res.locals.user._id })
     .lean()
-    .sort({ bookingDate: "desc", session: "asc" })
-    //todo : fix time order
+    .sort({ date: "desc" })
     .then((bookings) => {
-      // console.log(bookings);
-      console.log(">>>>>>>>> bookingDate formatting <<<<<<<<<");
-      function dateFormat(value) {
-        const weekday = [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ];
-        if (!value) return value;
-        let date = new Date(value),
-          y = date.getFullYear(),
-          m = date.getMonth() + 1,
-          d = date.getDate(),
-          w = weekday[date.getDay()],
-          bookDate = y + "/" + m + "/" + d + " (" + w + ")";
-        return bookDate;
-      }
-      bookings.forEach(function f(booking) {
-        booking.bookingDate = dateFormat(booking.bookingDate);
-      });
+      //! define variable name "ideas" => bookingsapp
+      console.log(ideas);
       res.locals.bookings = bookings;
-      res.render("bookings/bookingsIndex", { bookings: bookings });
+      res.render("bookings/bookingsIndex");
     });
 };
 
-export const getAddBookings = (req, res) => {
+const getAddBookings = (req, res) => {
   res.render("bookings/add");
 };
 
-export const postAddBookings = (req, res) => {
-  let errors = [];
-  let today = new Date(),
-    dateChecking = new Date(req.body.bookingDate);
+const postAddBookings = (req, res) => {
+  let errors = []; //* if no variable => array
   if (!req.body.bookingDate) {
     errors.push({ text: "Please select a date" });
   }
-  if (!req.body.email) {
-    errors.push({ text: "Please enter email" });
-  } //todo : fix correct msg
-  if (dateChecking < today) {
-    errors.push({ text: "An error in booking Date and Time. Please review." });
+  if (!req.body.session) {
+    errors.push({ text: "Please select the times" });
   }
+  if (!req.body.facilities) {
+    errors.push({ text: "Please select the rooms" });
+  }
+  if (!req.body) {
+    errors.push({ text: "An error in booking Date and Time. Please review." });
+  } //! for chosing the day before
+
   if (errors.length > 0) {
     res.render("bookings/add", {
       errors: errors,
@@ -69,19 +46,12 @@ export const postAddBookings = (req, res) => {
       session: req.body.session,
       facilities: req.body.facilities,
       courseID: req.body.courseID,
-      email: req.body.email,
-      phone: req.body.phone,
+      email: req.body.email, //! body => locals.user
+      phone: req.body.phone, //! body => locals.user
       userID: res.locals.user._id,
+      //? passportConfig - user._id -> find the id and bring back for respond client, break though all the page code
     };
-    console.log(">>>>>>>>> courseID formatting <<<<<<<<<");
-    // function courseFormat(courseID) {
-    //   if (!courseID) return courseID;
-    //   let s = "01";
-    //   s = courseID + s;
-    //   return s;
-    // }
-    // newBooking.courseID = courseFormat(newBooking.courseID);
-
+    //* available for edited more databese
     new Booking(newBooking).save().then(() => {
       req.flash("success_msg", "Booking Added!");
       res.redirect("/bookings");
@@ -89,14 +59,14 @@ export const postAddBookings = (req, res) => {
   }
 };
 
-export const deleteBookings = (req, res) => {
+const deleteBookings = (req, res) => {
   Booking.deleteOne({ _id: req.params.id }).then(() => {
     req.flash("error_msg", "Booking Deleted!");
     res.redirect("/bookings");
   });
 };
 
-export const getEditBookings = (req, res) => {
+const getEditBookings = (req, res) => {
   Booking.findOne({ _id: req.params.id })
     .lean()
     .then((booking) => {
@@ -104,7 +74,7 @@ export const getEditBookings = (req, res) => {
       res.render("bookings/edit", { booking: booking });
     });
 };
-export const putEditBookings = (req, res) => {
+const putEditBookings = (req, res) => {
   Booking.findOne({
     _id: req.params.id,
   }).then((booking) => {
@@ -138,3 +108,4 @@ export const putEditBookings = (req, res) => {
     }
   });
 };
+//* middleware *//

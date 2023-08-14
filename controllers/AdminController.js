@@ -1,5 +1,5 @@
-import Booking from "../models/booking.js";
-import contacts from "../models/Contact.js";
+// import Booking from "../models/booking.js";
+// import contacts from "../models/Contact.js";
 
 export const getRecords = (req, res) => {
   Booking.aggregate([

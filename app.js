@@ -22,7 +22,7 @@ mongoose
 import ideasRoute from "./routes/ideasRoute.js";
 import usersRoute from "./routes/usersRoute.js";
 import bookingsRoute from "./routes/bookingsRoute.js";
-import contactsRoute from "./routes/contactsRoute.js";
+//todo : modify soon or later
 import adminRoute from "./routes/adminRoute.js";
 
 import passport from "passport";
@@ -59,17 +59,19 @@ app.use(function (req, res, next) {
   res.locals.error_msg = req.flash("error_msg");
   res.locals.fail_passport = req.flash("fail_passport"); //? pass passportConfig err message
   res.locals.user = req.user || null;
-  //? Add *** NEW
-  if (req.user) {
-    // console.log("req.user.admin => ",req.user.admin);
-    if (req.user.admin == true) {
-      res.locals.admin = true;
-    } else {
-      res.locals.admin = false;
-    }
-    console.log("user ==> ", res.locals.user);
-  }
-  //console.log("=== login user ===", res.locals.user);
+  // console.log("=== login user ===", res.locals.user);
+
+  //* script - admin
+  // if (req.user) {
+  //   // console.log("req.user.admin => ",req.user.admin);
+  //   if (req.user.admin == true) {
+  //     res.locals.admin = true;
+  //   } else {
+  //     res.locals.admin = false;
+  //   }
+  //   console.log("user ==> ", res.locals.user);
+  // }
+  //* script - admin
   next(); //? initialize flash()
 });
 
@@ -104,7 +106,6 @@ app.get("/front", (req, res) => {
 app.use("/ideas", ensureAuthenticated, ideasRoute);
 app.use("/users", usersRoute);
 app.use("/bookings", ensureAuthenticated, bookingsRoute);
-app.use("/contacts", contactsRoute);
 app.use("/admin", adminRoute);
 
 app.use(function (req, res, next) {

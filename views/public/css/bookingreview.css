@@ -1,0 +1,36 @@
+.section-review {
+  padding: 9.6rem 0;
+}
+
+.card-content {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.card {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border: none;
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.confirmation-content {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
